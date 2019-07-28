@@ -41,7 +41,7 @@
       标题(title), author(作者), type(文章类型), content(内容), createOn(发布时间), 最近修改时间(lastUpdateTime), star(点赞数), ready_num(阅读数), follow_num(关注数)
   + 评论表(critics)
     * 评论数据表涉及的字段: 
-      critics(评论人), content(评论内容), createOn(评论时间), star(点赞数), reply(回复)
+      critics(评论人), blogid(博客id), content(评论内容), createOn(评论时间), star(点赞数), reply(回复),respondent(评论回复者)
 
 ### 接口设计
 
@@ -60,6 +60,7 @@
 |删除博客|/api/blog/delete| delete|id    | 需用户登录 |   
 |新增博客评论|/api/critic/new/:blogid| post| 需用户登录 |   
 |回复评论|/api/critic/reply/:criticid| post| 需用户登录 |   
+|点赞评论|/api/critic/criticStar/:criticid|get| 需用户登录 |      
 |点赞|/api/blog/updateStar|get| blogid| 需用户登录 |  
 |关注|/api/blog/updateFollow|get| blogid| 需用户登录 |  
 |更新阅读数|/api/blog/updateReady|get| blogid| 需用户登录 |  

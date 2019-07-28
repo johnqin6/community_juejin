@@ -7,7 +7,11 @@ const CriticSchema = new Schema({
   critics: {
     type: String,
     required: true
-  }, 
+  },
+  blogid: {
+    type: String,
+    required: true
+  },
   content: {
     type: String,
     required: true
@@ -20,7 +24,8 @@ const CriticSchema = new Schema({
     type: Number,
     default: 0
   }, 
-  reply: String
+  reply: String,
+  respondent: String
 })
 
 module.exports = mongoose.model('Critic', CriticSchema)

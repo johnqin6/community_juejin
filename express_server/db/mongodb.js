@@ -12,6 +12,9 @@ mongoose.connect(dbUrl, {
 }).then(() => console.log('成功连接数据库'))
 .catch(err => console.log(err));
 
+// 防止findOneAndUpdate()内部会使用findAndModify驱动，驱动即将被废弃，弹出警告
+mongoose.set('useFindAndModify', false)
+
 module.exports = {
   User,
   Blog,

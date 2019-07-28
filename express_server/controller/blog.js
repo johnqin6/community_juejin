@@ -83,7 +83,7 @@ const updateReady = id => {
     let ready_num = doc.ready_num + 1
     return Blog.findByIdAndUpdate(id, { ready_num: ready_num })
   }).then(doc => {
-    if (doc) return true
+    if (doc) return doc
     return false
   })
 }
@@ -100,7 +100,7 @@ const updateStar = id => {
     let star = doc.star + 1
     return Blog.findByIdAndUpdate(id, { star: star })
   }).then(doc => {
-    if (doc) return true
+    if (doc) return doc
     return false
   })
 }
@@ -117,7 +117,7 @@ const updateFollow = id => {
     let follow_num = doc.follow_num + 1
     return Blog.findByIdAndUpdate(id, { follow_num: follow_num })
   }).then(doc => {
-    if (doc) return true
+    if (doc) return doc
     return false
   })
 }
