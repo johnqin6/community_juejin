@@ -60,9 +60,9 @@
 |删除博客|/api/blog/delete| delete|id    | 需用户登录 |   
 |新增博客评论|/api/critic/new/:blogid| post| 需用户登录 |   
 |回复评论|/api/critic/reply/:criticid| post| 需用户登录 |   
-|点赞|/api/blog/star|get| blogid| 需用户登录 |  
-|关注|/api/blog/follow|get| blogid| 需用户登录 |  
-|更新阅读数|/api/blog/ready|get| blogid| 需用户登录 |  
+|点赞|/api/blog/updateStar|get| blogid| 需用户登录 |  
+|关注|/api/blog/updateFollow|get| blogid| 需用户登录 |  
+|更新阅读数|/api/blog/updateReady|get| blogid| 需用户登录 |  
 
 
 

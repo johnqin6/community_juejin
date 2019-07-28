@@ -6,7 +6,7 @@ var logger = require('morgan');
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
 
-var indexRouter = require('./routes/index');
+var blogRouter = require('./routes/blog');
 var usersRouter = require('./routes/users');
 
 var app = express();
@@ -37,7 +37,7 @@ app.use(session({
   store: sessionStore
 }))
 
-app.use('/', indexRouter);
+app.use('/api/blog', blogRouter);
 app.use('/api/user', usersRouter);
 
 // catch 404 and forward to error handler

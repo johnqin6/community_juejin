@@ -64,17 +64,6 @@ router.post('/update', loginCheck, (req, res, next) => {
   })
 })
 
-// // 更新用户信息
-// router.post('/avatar', loginCheck, (req, res, next) => {
-//   updateUser.then(id, req.body).then(val => {
-//     if (val) {
-//       res.send(new SuccessModel('用户头像成功! '))
-//       return
-//     }
-//     res.send(new ErrorModel('用户信息失败！'))
-//   })
-// })
-
 // 注销账户
 router.delete('/delete',loginCheck, (req, res, next) => {
   logout(req.session.userid).then(val => {
