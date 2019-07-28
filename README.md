@@ -35,10 +35,10 @@
 - 数据库设计
   + 用户表(users)
     * 用户数据表涉及的字段:  
-      username(用户名称)，password(密码), avatar(头像), positiion(职位), company(公司), introduce(介绍), createOn(注册时间)
+      username(用户名称)，email(邮箱), password(密码), avatar(头像), positiion(职位), company(公司), introduce(介绍), createOn(注册时间), follow_num(关注数)
   + 博客表(blogs)
     * 博客数据表涉及的字段:  
-      标题(title), author(作者), type(文章类型), content(内容), createOn(发布时间), 最近修改时间(lastUpdateTime)
+      标题(title), author(作者), type(文章类型), content(内容), createOn(发布时间), 最近修改时间(lastUpdateTime), star(点赞数), ready_num(阅读数), follow_num(关注数)
   + 评论表(critics)
     * 评论数据表涉及的字段: 
       critics(评论人), content(评论内容), createOn(评论时间), star(点赞数), reply(回复)
@@ -50,7 +50,9 @@
 |用户注册|/api/user/register| post| email(邮箱)，username(用户名), password(密码)|邮箱不能重复 |    
 |用户登录|/api/user/login| post| email/username, password| email或username与密码同时匹配 |    
 |用户注销|/api/user/delete| delete|     | 注销的用户（软删除）|   
-|更新用户信息|/api/user/edit| post|      | 修改密码，用户头像及其他信息|    
+|更新用户信息|/api/user/update| post|      |  |    
+|更新用户密码|/api/user/changePwd| post|   |  需用户登录 |   
+|更新用户头像|/api/user/avatar| post|     | 需用户登录 |   
 |获取博客列表|/api/blog/list| get|  type/keyword | 默认返回推荐内容，时间倒序|   
 |获取博客详情|/api/blog/detail| get| id  |          |     
 |新增博客详情|/api/blog/new| post|       | 需用户登录 |   

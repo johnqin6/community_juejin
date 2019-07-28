@@ -8,13 +8,17 @@
     "prd": "cross-env NODE_ENV=production nodemon ./bin/www.js"
   },
   "dependencies": {
+    "connect-redis": "^3.4.2",
     "cookie-parser": "~1.4.4",
     "cross-env": "^5.2.0",
     "debug": "~2.6.9",
     "express": "~4.16.1",
+    "express-session": "^1.16.2",
+    "gravatar": "^1.8.0",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
     "mongoose": "^5.6.7",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "redis": "^2.8.0"
   }
 }
